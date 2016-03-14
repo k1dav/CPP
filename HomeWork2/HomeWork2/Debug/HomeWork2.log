@@ -1,0 +1,11 @@
+﻿  16+16cal.cpp
+c:\users\hope\documents\github\cpp\homework2\homework2\16+16cal.cpp(11): warning C4129: '/': 無法辨識的字元逸出序列
+c:\users\hope\documents\github\cpp\homework2\homework2\16+16cal.cpp(30): warning C4129: '/': 無法辨識的字元逸出序列
+c:\users\hope\documents\github\cpp\homework2\homework2\16+16cal.cpp(8): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+c:\users\hope\documents\github\cpp\homework2\homework2\16+16cal.cpp(12): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+c:\users\hope\documents\github\cpp\homework2\homework2\16+16cal.cpp(15): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+  LINK : 最後的累加連結找不到或未建置 C:\Users\Hope\Documents\GitHub\CPP\HomeWork2\Debug\HomeWork2.exe，正在執行完整連結
+  HomeWork2.vcxproj -> C:\Users\Hope\Documents\GitHub\CPP\HomeWork2\Debug\HomeWork2.exe
