@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//§¹¬ü¼Æ
+
 int main(void) {
 	int a, b=0,s=0;
 	printf("Perfect Number Test\n");

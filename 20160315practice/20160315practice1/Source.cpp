@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//判斷成績及格重補修
+
 int main(void) {
 	int g;
 	printf("Please input your grade:");
