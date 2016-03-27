@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\hope\documents\github\cpp\20160321singlenumberhw\20160321singlenumberhw4\source.cpp(7): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+c:\users\hope\documents\github\cpp\20160321singlenumberhw\20160321singlenumberhw4\source.cpp(10): warning C4477: 'scanf' : 格式字串 '%d' 需要 'int *' 類型的引數，但 variadic 引數 1 的類型為 'int'
+c:\users\hope\documents\github\cpp\20160321singlenumberhw\20160321singlenumberhw4\source.cpp(10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+  20160321SingleNumberHW4.vcxproj -> C:\Users\Hope\Documents\GitHub\CPP\20160321SingleNumberHW\Debug\20160321SingleNumberHW4.exe
