@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5424859C-6607-4831-B141-F12146C64965}</ProjectGuid>
+    <ProjectGuid>{2F90DF84-8657-43B3-A60A-79BF5148527E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>BookExerciseUnit49</RootNamespace>
+    <RootNamespace>BookExerciseUnit436</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>BookExerciseUnit4-09</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
