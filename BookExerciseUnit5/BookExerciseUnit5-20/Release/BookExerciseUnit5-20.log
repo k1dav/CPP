@@ -1,0 +1,9 @@
+﻿  Source.cpp
+Source.cpp(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+Source.cpp(19): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1270): note: 請參閱 'scanf' 的宣告
+  正在產生程式碼
+  All 9 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成程式碼產生
+  BookExerciseUnit5-20.vcxproj -> C:\Users\Hope\Documents\GitHub\CPP\BookExerciseUnit5\Release\BookExerciseUnit5-20.exe
