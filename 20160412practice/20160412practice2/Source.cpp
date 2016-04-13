@@ -11,7 +11,7 @@ int main(void) {
 	printf("Enter Start Peg:");
 	scanf("%s", &s);
 	printf("Enter End Peg:");
-	scanf("%s", &e);
+	scanf("%s", &e); 
 	printf("Enter Buffer Peg:");
 	scanf("%s", &b);
 	honai(number, s, e, b);
@@ -20,12 +20,12 @@ int main(void) {
 
 void honai(int n, char source, char end, char buffer) {
 	if (n == 1) {
-		printf("%c > %c\n", source, end);
+		printf("move disk %d from %c to %c\n",n, source, end);
 		return;
 	} 
 	else {
 		honai(n - 1, source, buffer, end);
-		printf("%c > %c\n", source, end);
+		printf("move disk %d from %c to %c\n",n, source, end);
 		honai(n - 1, buffer, end, source);
 	}
 
