@@ -28,7 +28,6 @@ int main(void) {
 }
 
 void P(int n, int m) {
-
 	for (num[m] = 1; num[m] <= n; num[m]++) {
 		if (m > m1) {
 			return;
@@ -43,7 +42,6 @@ void P(int n, int m) {
 			puts("");
 		}
 	}
-
 }
 
 int test(void) {											//驗證有無重復數字 a = m
