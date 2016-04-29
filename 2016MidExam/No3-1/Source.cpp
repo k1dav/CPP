@@ -58,7 +58,7 @@ void dumparray(int arr[], int times) {
 
 void perm(int arr[], int start, int end, int times) {
 
-	if (end == start) {
+	if (end == start||start<1) {
 		return;
 	}
 	else {
@@ -68,9 +68,13 @@ void perm(int arr[], int start, int end, int times) {
 			swap(arr[start - 1], arr[end - 1]);
 			dumparray(arr, times);
 
-			if (counter == 1) {
-				perm(arr, 1, end - 1, times);
+			if (start == counter ) {
+				perm(arr, start , end-1, times);
 			}
+			else {
+				perm(arr, start - 1, end, times);
+			}
+			
 		}
 		swap(arr[start - 1], arr[end - 1]);
 		counter--;

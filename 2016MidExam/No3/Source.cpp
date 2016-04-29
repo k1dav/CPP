@@ -1,73 +1,31 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void perm(int start, int end, int arr[], int times);
 void sequence(int arr[], int times);
 void dumparray(int arr[], int times);
-int counter = 0;
+void perm(int arr[], int n, int times);
+int used[10] = { 0 };
+int ans[20] = { 0 };
+
 
 int main(void) {
-	int t;
-	printf("請輸入有幾個數字要做排列:");
-	scanf("%d", &t);
-	int *num = (int*)malloc(sizeof(int)*t);
-	for (int i = 1; i <= t; i++) {
-		printf("請輸入第%d個數字:", i);
+	int num[20] = { 0 };
+	int times;
+	printf("請輸入數字個數：");
+	scanf("%d", &times);
+	for (int i = 1; i <= times; i++) {
+		printf("請輸入數字:");
 		scanf("%d", &num[i - 1]);
 	}
-	sequence(num, t);
-	dumparray(num, t);
+	sequence(num, times);
+	perm(num, 0, times);
 
-	for (int i = 1; i <= t; i++) {
-		int min = num[0];
-		if (i == 1) {
-			perm(i, t, num, t);
-		}
-		else {
-			while (num[i - 1] == min&&i<t) {
-				i++;
-			}
-			perm(i, t, num, t);
-		}
-	}
-
-	free(num);
-	return 0;
-}
-
-void perm(int start, int end, int arr[], int times) {
-	if (end == start) {
-		return;
-	}
-	else {
-		perm(start, end - 1, arr, times);
-		counter++;
-		if (arr[start - 1] != arr[end - 1]) {
-			int temp = arr[start - 1];
-			arr[start - 1] = arr[end - 1];
-			arr[end - 1] = temp;
-
-			if (counter == 1) {
-				perm(1, end - 1, arr, times);
-			}
-			
-
-			dumparray(arr, times);
-
-
-			temp = arr[start - 1];
-			arr[start - 1] = arr[end - 1];
-			arr[end - 1] = temp;
-
-		}
-		counter--;
-	}
 }
 
 void sequence(int arr[], int times) {
-	for (int i = times; i >= 1; i--) {
-		for (int j = i - 1; j >= 0; j--) {
-			if (arr[i - 1] < arr[j - 1]) {
+	for (int i = 1; i <= times; i++) {
+		for (int j = i + 1; j <= times; j++) {
+			if (arr[i - 1] > arr[j - 1]) {
 				int temp = arr[i - 1];
 				arr[i - 1] = arr[j - 1];
 				arr[j - 1] = temp;
@@ -81,4 +39,24 @@ void dumparray(int arr[], int times) {
 		printf("%3d", arr[i - 1]);
 	}
 	puts("");
+}
+
+void perm(int arr[], int n, int times) {
+	if (n == times) {
+		dumparray(ans, times);
+		return;
+	}
+	int last_one = -1;
+
+	for (int i = 1; i <= times; i++) {
+		if (used[i - 1] == 0) {
+			if (arr[i - 1] != last_one) {
+				last_one = arr[i - 1];
+				used[i - 1] = 1;
+				ans[n] = arr[i - 1];
+				perm(arr, n + 1, times);
+				used[i - 1] = 0;
+			}
+		}
+	}
 }
