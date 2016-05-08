@@ -5,7 +5,7 @@
 int isleap(int y);
 int day(int yy, int mm, int dd);
 int yymmdd[20][4];
-int month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
 
 int main(void) {
 	int y1, m1, d1;
@@ -26,6 +26,7 @@ int isleap(int y) {
 }
 
 int day(int yy, int mm, int dd) {
+	int month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
 	int total = 0;
 	for (int i = 1; i<yy; i++) {
 		if (isleap(i) == 1) {
@@ -41,5 +42,5 @@ int day(int yy, int mm, int dd) {
 		total += month[i - 1];
 	}
 	total += dd;
-	return total % 7;
+	return total;
 }
