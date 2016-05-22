@@ -2,62 +2,114 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<ctype.h>
+#define BUFFER 256
 
-void encode() {
-	char *test = "http://www.w3schools.com/tags/ref_urlencode.asp";
-	int times = strlen(test);											//輸入長度
+void encode(char *input, char *output) {
 
-	char result[1024];
-	int counter = 0;													//result的字元位置
+	int times = strlen(input);											//輸入長度
 
-	for (int i = 1; i <= times; i++) {
+	int counter = 0;													//output的字元位置
 
-		int dec = test[i - 1];											//取得輸入字串ascii值
+	if (input[times - 1] != '\n') {								//最後一句若無換行符號，需+1(原<times 為了略過換行符號)
+		times++;
+	}
 
-		if (!((dec >= 48 && dec <= 57) || (dec >= 65 && dec <= 90) || (dec >= 97 && dec <= 122) || (dec == 46))) {  //英文數字點不轉
-			result[counter] = '%';
+	for (int i = 1; i < times; i++) {
+
+		if (!((isalnum(input[i - 1])) || (input[i - 1] == '.'))) {	//英文數字點不轉
+			output[counter] = '%';
 			counter++;
-			result[counter] = hexTchar(dec, 1);
+			output[counter] = hexTchar(input[i - 1], 1);
 			counter++;
-			result[counter] = hexTchar(dec, 2);
+			output[counter] = hexTchar(input[i - 1], 2);
 			counter++;
 		}
 		else {
-			result[counter] = test[i - 1];
+			output[counter] = input[i - 1];
 			counter++;
 		}
-
 	}
-	result[counter] = '\0';												//字尾補上結束字元
-	printf("%s\n", result);
+	output[counter] = '\0';												//字尾補上結束字元
+	puts(output);
 }
 
-void decode() {
-	char *test = "http%3A%2F%2Fwww.w3schools.com%2Ftags%2Fref%5Furlencode.asp";
-	int times = strlen(test);
+void decode(char *input, char *output) {
 
-	char result[1024];
-	int counter = 0;													//result的字元位置
+	int times = strlen(input);
 
-	for (int i = 1; i <= times; i++) {
-		int asc = test[i - 1];
-		if (asc == 37) {
-			char ans = charThex(test[i], test[i + 1]);
+	int counter = 0;													//output的字元位置
+
+	if (input[times - 1] != '\n') {								//最後一句若無換行符號，需+1(原<times 為了略過換行符號)
+		times++;
+	}
+
+	for (int i = 1; i < times; i++) {  //<為了略過換行符號
+
+		if ((input[i - 1] == '%') && (isxdigit(input[i])) && (isxdigit(input[i + 1]))) {	//驗證%後是否接二個十六進位，是則轉
+			char ans = charThex(input[i], input[i + 1]);
 			i += 2;
-			result[counter] = ans;
+			output[counter] = ans;
 			counter++;
 		}
 		else {
-			result[counter] = test[i - 1];
+			output[counter] = input[i - 1];
 			counter++;
 		}
 	}
-	result[counter] = '\0';												//字尾補上結束字元
-	printf("%s\n", result);
+	output[counter] = '\0';												//字尾補上結束字元
+	puts(output);
 }
 
-int main(void) {
+void ec(char source[], char destination[], char argv) {
+	char result[1024];
+	char input[BUFFER];
+	if (argv == 'e') {
+		FILE *sourcePtr = open(source, "r");
+		FILE *desPtr = open(destination, "w");
 
+		while (fgets(input, BUFFER, sourcePtr) != NULL) {
+			encode(input, result);
+			write(desPtr, result);
+		}
+
+		fclose(sourcePtr);
+		fclose(desPtr);
+	}
+	else {
+		FILE *sourcePtr = open(source, "r");
+		FILE *desPtr = open(destination, "w");
+
+		while (fgets(input, BUFFER, sourcePtr) != NULL) {
+			decode(input, result);
+			write(desPtr, result);
+		}
+
+		fclose(sourcePtr);
+		fclose(desPtr);
+	}
+
+}
+
+int main(int argc, char *argv[]) {
+	if (argc > 1) {
+		if (strcmp(argv[1], "e") == 0 && argc == 4) {
+			ec(argv[2], argv[3], 'e');
+			printf("source: %s\n", argv[2]);
+			printf("destination: %s\n", argv[3]);
+		}
+		else if (strcmp(argv[1], "d") == 0 && argc == 4) {
+			ec(argv[2], argv[3], 'd');
+			puts("");
+			printf("Source: %s\n", argv[2]);
+			printf("Destination: %s\n", argv[3]);
+		}
+		else {
+			printf("Please use %s e source.txt destination.txt\n", argv[0]);
+			printf("Please use %s d source.txt destination.txt\n", argv[0]);
+		}
+	}
 
 	return 0;
+	system("pause");
 }

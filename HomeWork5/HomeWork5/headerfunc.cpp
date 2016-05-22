@@ -31,7 +31,7 @@ void write(FILE *fPtr, char content[]) {
 	for (int index = 0; content[index] != '\0'; index++) {
 		fputc(content[index], fPtr);
 	}
-	fclose(fPtr);
+	fputc('\n', fPtr);
 }
 
 FILE* open(char fileName[], char type[]) {
@@ -41,20 +41,5 @@ FILE* open(char fileName[], char type[]) {
 		exit(1);
 	}
 	return fPtr;
-}
-
-void read(FILE *fPtr, char str[], int length) {
-	int data;
-	int index = 0;
-	while ((data = fgetc(fPtr)) != EOF) {
-		str[index] = data;
-		index++;
-		if (index > length - 1) {
-			printf("the length of content is more than array size.\n");
-			exit(1);
-		}
-	}
-	str[index] = '\0';
-	fclose(fPtr);
 }
 
