@@ -3,14 +3,12 @@
 #include<string.h>
 #define SIZE 40
 
-int counterline(FILE *Ptr) {						//計算過濾檔行數
+int counterline(FILE *Ptr) {							//計算過濾檔行數
 	char buffer[SIZE];
 	int counter = 0;
 
 	while (fgets(buffer, SIZE, Ptr) != NULL) {			//一次一行，有讀到字則counter+1
-		if (strcmp(buffer, "\n") != 0) {				//空白行不算
-			counter++;
-		}
+		counter++;
 	}
 
 	return counter;
@@ -24,15 +22,17 @@ void filter(FILE *Ptr, char **input, int times) {		//讀取過濾檔
 		fgets(buffer, SIZE, Ptr);
 		int length = strlen(buffer);					//讀取字串長
 
-		for (int j = 1; j <= length; j++) {
-			if (buffer[j - 1] == '\n' || buffer[j - 1] == '\t' || buffer[j - 1] == ' ' || buffer[j - 1] == '\r') {
-				buffer[j - 1] = '\0';
-				break;
+		for (int j = 1; j <= length; j++) {				
+			while (buffer[j - 1] == '\n' || buffer[j - 1] == '\t' || buffer[j - 1] == ' ' || buffer[j - 1] == '\r') {
+				for (int k = j; k <= length; k++) {		//處理buffer中不為英數的字
+					buffer[k - 1] = buffer[k];
+				}
+				length--;
 			}
 		}
 
 		input[i - 1] = (char*)malloc(sizeof(char)*(length + 1));
-		strcpy(input[i - 1], buffer);				
+		strcpy(input[i - 1], buffer);					//buffer轉存input
 	}
 }
 

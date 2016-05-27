@@ -1,21 +1,4 @@
-A		
-B
-C
-D
-E
-F
-G                       
-H
-I
-J
-THIS					
-IS  
-MY   
-TEST
-WORLD
-THX
-Q
+  this   			
+the
 a
-my
-?
-
+that

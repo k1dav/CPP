@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<ctype.h>
 #include"header.h"
 
 
@@ -15,10 +16,8 @@ int main(int argc, char *argv[]) {
 	filter(inputPtr, input, line);
 
 	FILE *inPtr = open(argv[2], "r+");
-	
-	
 
-
+	
 
 	fclose(inputPtr);
 	free(input);
