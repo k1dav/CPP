@@ -16,8 +16,7 @@ int main(int argc, char *argv[]) {
 	filter(inputPtr, input, line);
 
 	FILE *inPtr = open(argv[2], "r+");
-
-	
+	fill(inPtr, input, line);
 
 	fclose(inputPtr);
 	free(input);
