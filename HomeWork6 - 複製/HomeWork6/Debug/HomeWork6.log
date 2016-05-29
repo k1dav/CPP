@@ -1,6 +1,0 @@
-﻿  headerfunc.cpp
-c:\users\hope\documents\github\cpp\homework6\homework6\headerfunc.cpp(36): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 請參閱 'strcpy' 的宣告
-c:\users\hope\documents\github\cpp\homework6\homework6\headerfunc.cpp(48): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 請參閱 'fopen' 的宣告
-  HomeWork6.vcxproj -> C:\Users\Hope\Documents\GitHub\CPP\HomeWork6\Debug\HomeWork6.exe
