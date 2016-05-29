@@ -53,13 +53,15 @@ FILE* open(char fileName[], char type[]) {
 	return fPtr;
 }
 
+
 void fill(FILE *Ptr, char ** filter, int times) {
 	char ch;
-	char buffer[20];
+	char buffer[SIZE];
 	int counter = 0, c = 0;
 
 	while ((ch = fgetc(Ptr)) != EOF) {
-		if (!isspace(ch)) {
+
+		if (isalnum(ch)) {
 			buffer[c] = ch;
 			c++;
 		}
@@ -67,16 +69,19 @@ void fill(FILE *Ptr, char ** filter, int times) {
 			buffer[c] = '\0';
 			for (int i = 1; i <= times; i++) {
 				if (strcmp(buffer, filter[i - 1]) == 0) {
-					fseek(Ptr, counter, SEEK_SET);
-					for (int i = 1; i <= c; i++) {
+					fseek(Ptr, counter*sizeof(char), SEEK_SET);			//回到需覆蓋的位置
+					for (int i = 1; i <= c; i++) {						//覆蓋
 						fputc(' ', Ptr);
 					}
+					fputc(ch, Ptr);
 				}
 			}
-			counter += c;									// <---待修
+			c++;
+			counter += c;									
 			c = 0;
 			buffer[c] = '\0';
-		}
 
+			fseek(Ptr, counter * sizeof(char), SEEK_SET);				//回到下一個讀取位置
+		}
 	}
 }
