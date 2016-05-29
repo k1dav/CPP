@@ -18,6 +18,11 @@ int main(int argc, char *argv[]) {
 	FILE *inPtr = open(argv[2], "r+");
 	fill(inPtr, input, line);
 
+	printf("Source:%s\n",argv[1]);
+	printf("Destination:%s\n",argv[2]);
+	printf("Finished.\n");
+
+	fclose(inPtr);
 	fclose(inputPtr);
 	free(input);
 	system("pause");

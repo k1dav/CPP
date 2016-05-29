@@ -23,7 +23,7 @@ void filter(FILE *Ptr, char **input, int times) {		//讀取過濾檔
 		int length = strlen(buffer);					//讀取字串長
 
 		for (int j = 1; j <= length; j++) {
-			while (buffer[j - 1] == ' ' || buffer[j - 1] == '\n' ||  buffer[j - 1] == '\r' || buffer[j - 1] == '\t') {			//處理buffer中不為英數的字
+			while (!((buffer[j - 1] >= 48 && buffer[j - 1] <= 57) || (buffer[j - 1] >= 65 && buffer[j - 1] <= 90) || (buffer[j - 1] >= 97 && buffer[j - 1] <= 122)||buffer[j-1]=='\0')) {			//處理buffer中不為英數的字
 				for (int k = j; k <= length; k++) {
 					buffer[k - 1] = buffer[k];
 				}
@@ -36,13 +36,6 @@ void filter(FILE *Ptr, char **input, int times) {		//讀取過濾檔
 	}
 }
 
-void write(FILE *fPtr, char content[]) {
-	for (int index = 0; content[index] != '\0'; index++) {
-		fputc(content[index], fPtr);
-	}
-	fputc('\n', fPtr);
-}
-
 FILE* open(char fileName[], char type[]) {
 	FILE *fPtr = fopen(fileName, type);
 	if (fPtr == NULL) {
@@ -52,18 +45,17 @@ FILE* open(char fileName[], char type[]) {
 	return fPtr;
 }
 
-
 void fill(FILE *Ptr, char ** filter, int times) {
 	char ch;
 	char buffer[SIZE];
-	int counter = 0, c = 0;
+	int counter = 0, c = 0;											//counter是記錄指標位移值，c是字長以及非英數符號
 
 	while ((ch = fgetc(Ptr)) != EOF) {
-
-		if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
+		if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {   //如果是英數就讀到buffer
 			buffer[c] = ch;
 			c++;
 		}
+
 		else {
 			buffer[c] = '\0';
 			for (int i = 1; i <= times; i++) {
@@ -76,7 +68,8 @@ void fill(FILE *Ptr, char ** filter, int times) {
 				}
 			}
 			c++;
-			counter += c;									
+			counter += c;			
+
 			c = 0;
 			buffer[c] = '\0';
 
