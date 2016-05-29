@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<ctype.h>
 #define SIZE 40
 
 int counterline(FILE *Ptr) {							//計算過濾檔行數
@@ -24,7 +23,7 @@ void filter(FILE *Ptr, char **input, int times) {		//讀取過濾檔
 		int length = strlen(buffer);					//讀取字串長
 
 		for (int j = 1; j <= length; j++) {
-			while (isspace(buffer[j - 1])) {		//處理buffer中不為英數的字
+			while (buffer[j - 1] == ' ' || buffer[j - 1] == '\n' ||  buffer[j - 1] == '\r' || buffer[j - 1] == '\t') {			//處理buffer中不為英數的字
 				for (int k = j; k <= length; k++) {
 					buffer[k - 1] = buffer[k];
 				}
@@ -61,7 +60,7 @@ void fill(FILE *Ptr, char ** filter, int times) {
 
 	while ((ch = fgetc(Ptr)) != EOF) {
 
-		if (isalnum(ch)) {
+		if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
 			buffer[c] = ch;
 			c++;
 		}

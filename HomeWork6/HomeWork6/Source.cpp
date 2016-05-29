@@ -18,9 +18,6 @@ int main(int argc, char *argv[]) {
 	FILE *inPtr = open(argv[2], "r+");
 	fill(inPtr, input, line);
 
-
-
-
 	fclose(inputPtr);
 	free(input);
 	system("pause");
