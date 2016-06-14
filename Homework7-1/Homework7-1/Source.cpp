@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<ctype.h>
 #define SIZE 20
 
 struct _Node
@@ -57,6 +56,13 @@ void displaylist(NodePtr headPtr) {
 	printf("NULL\n");
 }
 
+bool check(char ch) {		//check じ琌璣计虫ま腹
+	if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || ch == '\'') {
+		return true;
+	}
+	return false;
+}
+
 int main(int argc, char *argv[]) {
 	FILE *oPtr = fopen(argv[1], "r");
 	if (oPtr == NULL) {
@@ -71,9 +77,9 @@ int main(int argc, char *argv[]) {
 		int length = strlen(buffer);
 
 		for (int i = 1; i <= length; i++) {
-			if (!(isalnum(buffer[i - 1]) || buffer[i - 1] == '\'')) {			//獶笿璣计㎝'玥
+			if (!(check(buffer[i-1]))) {			//獶笿璣计㎝'玥
 
-				if (isalnum(buffer[i]) || buffer[i] == '\'') {					//秨繷ぃ场,ex "I"
+				if (check(buffer[i])) {					//秨繷ぃ场,ex "I"
 					for (int j = i; j <= length; j++) {
 						buffer[j - 1] = buffer[j];	
 					}

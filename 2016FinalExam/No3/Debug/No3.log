@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\hope\documents\github\cpp\2016finalexam\no3\source.cpp(64): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 請參閱 'fopen' 的宣告
+c:\users\hope\documents\github\cpp\2016finalexam\no3\source.cpp(73): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: 請參閱 'fscanf' 的宣告
+c:\users\hope\documents\github\cpp\2016finalexam\no3\source.cpp(59): warning C4715: 'check_block': 不是所有控制路徑都傳回值
+  No3.vcxproj -> C:\Users\Hope\Documents\GitHub\CPP\2016FinalExam\Debug\No3.exe
