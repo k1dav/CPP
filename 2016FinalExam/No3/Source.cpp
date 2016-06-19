@@ -43,6 +43,7 @@ int check_block(int number[SIZE*SIZE][SIZE*SIZE]) {
 			bool check[SIZE*SIZE] = { 0 };						//check°}¦C
 
 			for (int j = 0; j < SIZE; j++) {		//¦C
+
 				for (int k = 0; k < SIZE; k++) {	//¦æ
 					if (check[number[j + real_row][k + move_col] - 1] == 0) {
 						check[number[j + real_row][k + move_col] - 1] = 1;
@@ -50,10 +51,13 @@ int check_block(int number[SIZE*SIZE][SIZE*SIZE]) {
 					else {
 						return 1;
 					}
+
 				}
 			}
+
 			move_col += SIZE;
 		}
+
 		real_row += SIZE;
 	}
 }
