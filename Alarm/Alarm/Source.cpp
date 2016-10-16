@@ -62,11 +62,16 @@ void displayAlarms() {
 void loadAlarms(FILE *oPtr)
 {
 	int counter = 0;
-	while (fscanf(oPtr,"%d:%d %s",
+	/*while (fscanf(oPtr,"%d:%d %s",
 		&alarms[counter].hour, &alarms[counter].min, &alarms[counter].message) != EOF) {
 		counter++;
+	}*/
+	int h, m;
+	char c[64];
+	while (fscanf(oPtr, "%d:%d %s", &h, &m, &c)!=EOF) {
+		setAlarm(&alarms[counter], h, m, 0,c);
+		counter++;
 	}
-
 }
 
 bool alarmTimeUp(Alarm *alarm, struct tm *current) {
