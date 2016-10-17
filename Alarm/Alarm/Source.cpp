@@ -119,6 +119,7 @@ void checkTimeEvent() { //why?
 			for (int i = 0; i < alarmNum; i++) {
 				alarms[i].notified = false;
 			}
+			displayAlarms();
 		}
 		
 	}
