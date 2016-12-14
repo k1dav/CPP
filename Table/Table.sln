@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2DArray", "2DArray\2DArray.vcxproj", "{B6BA4BAB-6049-43A1-A291-14874FCD484E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JaggedArray", "JaggedArray\JaggedArray.vcxproj", "{5120126A-0BFA-4FC1-98F5-B073B3127C07}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HashTable", "HashTable\HashTable.vcxproj", "{FA475658-E8BC-46BE-9BF2-7A216DE36C21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6BA4BAB-6049-43A1-A291-14874FCD484E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B6BA4BAB-6049-43A1-A291-14874FCD484E}.Debug|Win32.Build.0 = Debug|Win32
+		{B6BA4BAB-6049-43A1-A291-14874FCD484E}.Release|Win32.ActiveCfg = Release|Win32
+		{B6BA4BAB-6049-43A1-A291-14874FCD484E}.Release|Win32.Build.0 = Release|Win32
+		{5120126A-0BFA-4FC1-98F5-B073B3127C07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5120126A-0BFA-4FC1-98F5-B073B3127C07}.Debug|Win32.Build.0 = Debug|Win32
+		{5120126A-0BFA-4FC1-98F5-B073B3127C07}.Release|Win32.ActiveCfg = Release|Win32
+		{5120126A-0BFA-4FC1-98F5-B073B3127C07}.Release|Win32.Build.0 = Release|Win32
+		{FA475658-E8BC-46BE-9BF2-7A216DE36C21}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA475658-E8BC-46BE-9BF2-7A216DE36C21}.Debug|Win32.Build.0 = Debug|Win32
+		{FA475658-E8BC-46BE-9BF2-7A216DE36C21}.Release|Win32.ActiveCfg = Release|Win32
+		{FA475658-E8BC-46BE-9BF2-7A216DE36C21}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

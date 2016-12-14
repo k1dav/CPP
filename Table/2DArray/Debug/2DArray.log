@@ -1,0 +1,4 @@
+﻿  main.cpp
+main.obj : warning LNK4075: 忽略 '/EDITANDCONTINUE'，由於 '/SAFESEH' 規格
+  2DArray.vcxproj -> C:\Users\Hope\Downloads\Table\Table\Debug\2DArray.exe
+  2DArray.vcxproj -> C:\Users\Hope\Downloads\Table\Table\Debug\2DArray.pdb (Full PDB)

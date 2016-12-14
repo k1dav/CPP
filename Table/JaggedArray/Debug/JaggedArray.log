@@ -1,0 +1,4 @@
+﻿  main.cpp
+main.obj : warning LNK4075: 忽略 '/EDITANDCONTINUE'，由於 '/SAFESEH' 規格
+  JaggedArray.vcxproj -> C:\Users\Hope\Downloads\Table\Table\Debug\JaggedArray.exe
+  JaggedArray.vcxproj -> C:\Users\Hope\Downloads\Table\Table\Debug\JaggedArray.pdb (Full PDB)
