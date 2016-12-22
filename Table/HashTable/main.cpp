@@ -65,6 +65,10 @@ void insertEntry(Table *table, TableEntry *entry) {
 				table->entry[probe].next = entry;
 				return;
 			}
+			else {
+				prev->next = entry;
+				return;
+			}
 		}
 
 
@@ -112,23 +116,23 @@ void findTable(Table *table, char *key) {
 void main() {
 
 	Table *table = createTable(11);
-	TableEntry entry;
-	initialize(&entry, "coke", 20);
-	insertEntry(table, &entry);
-	initialize(&entry, "b", 20);
-	insertEntry(table, &entry);
-	initialize(&entry, "bb", 20);
-	insertEntry(table, &entry);
-	initialize(&entry, "bbb", 20);
-	insertEntry(table, &entry);
-	initialize(&entry, "milk tea", 15);
-	insertEntry(table, &entry);
-	initialize(&entry, "apple juice", 30);
-	insertEntry(table, &entry);
-	initialize(&entry, "orange juice", 25);
-	insertEntry(table, &entry);
-	initialize(&entry, "black tea", 10);
-	insertEntry(table, &entry);
+	TableEntry entry[11];
+	initialize(&entry[0], "coke", 20);
+	insertEntry(table, &entry[0]);
+	initialize(&entry[1], "b", 20);
+	insertEntry(table, &entry[1]);
+	initialize(&entry[2], "bb", 20);
+	insertEntry(table, &entry[2]);
+	initialize(&entry[3], "bbb", 20);
+	insertEntry(table, &entry[3]);
+	initialize(&entry[4], "milk tea", 15);
+	insertEntry(table, &entry[4]);
+	initialize(&entry[5], "apple juice", 30);
+	insertEntry(table, &entry[5]);
+	initialize(&entry[6], "orange juice", 25);
+	insertEntry(table, &entry[6]);
+	initialize(&entry[7], "black tea", 10);
+	insertEntry(table, &entry[7]);
 
 
 	findTable(table, "bbb");
