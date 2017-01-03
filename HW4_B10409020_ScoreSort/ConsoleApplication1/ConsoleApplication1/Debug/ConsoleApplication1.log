@@ -1,0 +1,19 @@
+﻿  Source.cpp
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 請參閱 'fopen' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(29): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: 請參閱 'fscanf' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(32): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 請參閱 'strtok' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(34): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 請參閱 'strcpy' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(35): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 請參閱 'strtok' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(37): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 請參閱 'strtok' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(39): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 請參閱 'strtok' 的宣告
+c:\users\k1dav\documents\github\cpp\hw4_b10409020_scoresort\consoleapplication1\consoleapplication1\source.cpp(41): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 請參閱 'strtok' 的宣告
+  ConsoleApplication1.vcxproj -> C:\Users\k1dav\Documents\GitHub\CPP\HW4_B10409020_ScoreSort\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> C:\Users\k1dav\Documents\GitHub\CPP\HW4_B10409020_ScoreSort\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)

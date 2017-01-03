@@ -7,7 +7,7 @@
 typedef struct TableEntry_t {
 	char *key;
 	int  price;
-	struct TableEntry_t *next;
+	struct TableEntry_t *n;
 } TableEntry;
 typedef struct Table_t {
 	TableEntry *entry;	// hash array
@@ -16,7 +16,7 @@ typedef struct Table_t {
 void initialize(TableEntry *entry, char *key, int price) {
 	entry->key = key;
 	entry->price = price;
-	entry->next = NULL;
+	entry->n = NULL;
 }
 void printEntry(TableEntry *entry) {
 	printf("%s %d\n", entry->key, entry->price);
@@ -52,21 +52,21 @@ void insertEntry(Table *table, TableEntry *entry) {
 		}
 		else {
 			TableEntry *prev = NULL;
-			TableEntry *current = table->entry[probe].next;
+			TableEntry *current = table->entry[probe].n;
 			while (current != NULL) {
 				if (strcmp(entry->key, table->entry[probe].key)==0) {
 					printf("ERROR: cannot insert duplicated entry\n");
 					return;
 				}
 				prev = current;
-				current = current->next;
+				current = current->n;
 			}
 			if (prev == NULL) {
-				table->entry[probe].next = entry;
+				table->entry[probe].n = entry;
 				return;
 			}
-			else {
-				prev->next = entry;
+			else if(prev!=NULL){
+				prev->n = entry;
 				return;
 			}
 		}
@@ -90,12 +90,12 @@ TableEntry *retrieveEntry(Table *table, TableEntry *entry) {
 			return &table->entry[probe];
 		}
 		else {
-			TableEntry *current = table->entry[probe].next;
+			TableEntry *current = table->entry[probe].n;
 			while (current != NULL) {
 				if (strcmp(entry->key, current->key)==0) {
 					return current;
 				}
-				current = current->next;
+				current = current->n;
 			}
 		}
 #ifdef	QUADRATIC_PROBING
@@ -119,23 +119,23 @@ void main() {
 	TableEntry entry[11];
 	initialize(&entry[0], "coke", 20);
 	insertEntry(table, &entry[0]);
-	initialize(&entry[1], "b", 20);
+	initialize(&entry[1], "bsererreeaffsfsd", 20);
 	insertEntry(table, &entry[1]);
-	initialize(&entry[2], "bb", 20);
+	initialize(&entry[2], "bfdsfadsfb", 20);
 	insertEntry(table, &entry[2]);
-	initialize(&entry[3], "bbb", 20);
+	initialize(&entry[3], "bfdafdsbb", 20);
 	insertEntry(table, &entry[3]);
-	initialize(&entry[4], "milk tea", 15);
+	initialize(&entry[4], "milk tefssfa", 15);
 	insertEntry(table, &entry[4]);
-	initialize(&entry[5], "apple juice", 30);
+	initialize(&entry[5], "apple judffice", 30);
 	insertEntry(table, &entry[5]);
-	initialize(&entry[6], "orange juice", 25);
+	initialize(&entry[6], "orange juidsce", 25);
 	insertEntry(table, &entry[6]);
-	initialize(&entry[7], "black tea", 10);
+	initialize(&entry[7], "black tefdfdsa", 10);
 	insertEntry(table, &entry[7]);
 
 
-	findTable(table, "bbb");
+	findTable(table, "bsererreeaffsfsd");
 	findTable(table, "cok");
 	findTable(table, "milk tea");
 	findTable(table, "apple juice");
