@@ -33,11 +33,11 @@ int main(void) {
 		while (pch != NULL) {
 			strcpy(student[i].name, pch);
 			pch = strtok(NULL, delim);
-			student[i].chinese = *pch;
+			student[i].chinese = atoi(pch);
 			pch = strtok(NULL, delim);
-			student[i].english = *pch;
+			student[i].english = atoi(pch);
 			pch = strtok(NULL, delim);
-			student[i].math = *pch;
+			student[i].math = atoi(pch);
 			pch = strtok(NULL, delim);
 		}
 		student[i].sum = student[i].chinese + student[i].english + student[i].math;
